@@ -5,20 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Weekly"
-        android:textColor="@color/blue"
-        android:background="@null"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:onClick="weeklyAction"
-        />
+    tools:context=".WeekViewActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +15,6 @@
         android:layout_marginTop="20dp"
         >
         <Button
-            android:id="@+id/leftArrowBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -37,19 +23,18 @@
             android:background="@null"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:onClick="previousMonthAction"
+            android:onClick="previousWeekAction"
             />
         <TextView
             android:id="@+id/monthYearTv"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text="Feb 2022"
+            android:text="January 2022"
             android:textSize="20sp"
             android:textAlignment="center"
             />
         <Button
-            android:id="@+id/rightArrowBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -58,7 +43,7 @@
             android:background="@null"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:onClick="nextMonthAction"
+            android:onClick="nextWeekAction"
             />
 
     </LinearLayout>
@@ -126,7 +111,25 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="New Event"
+        android:textColor="@color/blue"
+        android:background="@null"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:onClick="newEventAction"
+        />
+
+    <ListView
+        android:id="@+id/eventListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5" />
 
 </LinearLayout>
